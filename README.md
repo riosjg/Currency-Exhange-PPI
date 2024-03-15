@@ -2,6 +2,9 @@
 
 This application was built using Vite, following the requeriments by the technical challenge of PPI.
 
+![image](https://github.com/riosjg/Currency-Exhange-PPI/assets/59302971/4080242a-3a87-4f2f-9378-ff0701c6900d)
+
+
 ## Features
 
 - Currency conversion.
