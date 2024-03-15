@@ -1,6 +1,6 @@
 # Currency Exchange PPI
 
-This application was built using Vite, following the requeriments by the technical challenge of PPI.
+This application was built using React, Typescript, styled-components, yup and Vite, following the requeriments by the technical challenge of PPI.
 
 ## Features
 
