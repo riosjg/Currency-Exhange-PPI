@@ -63,23 +63,41 @@ const CurrencyInput: React.FC<CurrencyInputProps> = ({
   };
 
   return (
-    <StyledInputWrapper>
-      <StyledCurrencySymbol ref={symbolRef}>
-        {currencies[fromCurrency].symbol}
-      </StyledCurrencySymbol>
-      <StyledInput
-        style={{
-          paddingLeft: `${symbolWidth + 15}px`,
-          minWidth: `${252 - symbolWidth}px`,
-        }}
-        type="number"
-        value={amount}
-        onChange={handleChange}
-      />
-      {error && <div style={{ color: "red" }}>{error}</div>}
-    </StyledInputWrapper>
+    <StyledWrapper>
+      <StyledLabel>Amount</StyledLabel>
+      <StyledInputWrapper>
+        <StyledCurrencySymbol ref={symbolRef}>
+          {currencies[fromCurrency].symbol}
+        </StyledCurrencySymbol>
+        <StyledInput
+          style={{
+            paddingLeft: `${symbolWidth + 15}px`,
+            minWidth: `${252 - symbolWidth}px`,
+          }}
+          type="number"
+          value={amount}
+          onChange={handleChange}
+        />
+        {error && <div style={{ color: "red" }}>{error}</div>}
+      </StyledInputWrapper>
+    </StyledWrapper>
   );
 };
+
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+const StyledLabel = styled.label`
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+`;
 
 const StyledInputWrapper = styled.div`
   display: flex;

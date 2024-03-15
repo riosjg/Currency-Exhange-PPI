@@ -109,6 +109,7 @@ const CurrencyConverter: React.FC = () => {
             />
             <CurrencySelect
               currencies={currencies}
+              label="From"
               selectedCurrency={fromCurrency}
               onCurrencyChange={handleFromCurrencyChange}
             />
@@ -117,6 +118,7 @@ const CurrencyConverter: React.FC = () => {
             />
             <CurrencySelect
               currencies={currencies}
+              label="To"
               selectedCurrency={toCurrency}
               onCurrencyChange={handleToCurrencyChange}
             />
@@ -161,6 +163,11 @@ const ContentWrapper = styled.div`
 const StyledContainer = styled.div`
   width: 100vw;
   height: 100vh;
+  @media (max-width: 600px) {
+    height: calc(
+      100vh + 69px
+    ); // Conversion date is absolutely positioned 69px below the card
+  }
 `;
 
 const StyledTitleContainer = styled.div`

@@ -4,17 +4,20 @@ import { Currencies, KnownCurrencies } from "../types/apiTypes";
 
 interface CurrencySelectProps {
   currencies: Currencies;
+  label: string;
   selectedCurrency: KnownCurrencies;
   onCurrencyChange: (currency: KnownCurrencies) => void;
 }
 
 const CurrencySelect: React.FC<CurrencySelectProps> = ({
   currencies,
+  label,
   selectedCurrency,
   onCurrencyChange,
 }) => {
   return (
     <StyledSelectWrapper>
+      <StyledLabel>{label}</StyledLabel>
       <StyledSelect
         value={selectedCurrency}
         onChange={(e) => onCurrencyChange(e.target.value as KnownCurrencies)}
@@ -32,9 +35,20 @@ const CurrencySelect: React.FC<CurrencySelectProps> = ({
   );
 };
 
+const StyledLabel = styled.label`
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: black;
+`;
+
 const StyledSelectWrapper = styled.div`
   position: relative;
-
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   & select {
     appearance: none;
     -webkit-appearance: none; /* Safari */
@@ -47,7 +61,7 @@ const StyledSelectWrapper = styled.div`
     height: 16px;
     position: absolute;
     right: 16px;
-    top: 50%;
+    top: calc(50% + 16px); //16 px from the gap between label and input
     transform: translateY(-50%);
     pointer-events: none;
   }
