@@ -11,7 +11,7 @@ This application was built using React, Typescript, styled-components, yup and V
 
 - Real time exchange rates.
 
-- Possibility to swapm currencies.
+- Possibility to swap currencies.
 
 ## Techincal details
 
